@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROW A GARDEN - Tra Cứu Thông Tin Cây Cảnh</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <div class="badge-brand">GROW A GARDEN</div>
+            <nav class="nav">
+                <a href="#san-pham">Sản Phẩm Cây</a>
+                <a href="#bang-gia">Giá Tham Khảo</a>
+                <a href="#nhan-luc">Nhân Lực</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Khu vực giới thiệu & Sơ đồ click chọn cây -->
+    <section id="san-pham" class="main-showcase">
+        <div class="container">
+            <div class="title-banner">
+                <span class="step-badge">2</span>
+                <div>
+                    <h1>SẢN PHẨM CÂY CẢNH MINI</h1>
+                    <p class="subtitle">💡 Hãy <strong>click trực tiếp vào hình ảnh từng loại cây</strong> bên dưới để xem thông tin chi tiết, cách chăm sóc, lưu ý thú cưng & vị trí đặt cây phong thủy.</p>
+                </div>
+            </div>
+
+            <!-- Lưới hiển thị 4 cây minh họa (Render từ JS) -->
+            <div id="plant-showcase-grid" class="showcase-grid"></div>
+        </div>
+    </section>
+
+    <!-- Bảng giá tham khảo đồng giá cùng loại -->
+    <section id="bang-gia" class="section">
+        <div class="container">
+            <h2 class="section-heading">BẢNG GIÁ THAM KHẢO (ĐỒNG GIÁ CÙNG LOẠI)</h2>
+            <p class="section-desc">Trang web chỉ mang mục đích cung cấp thông tin tra cứu. Các giống cây thuộc cùng một phân loại sẽ có chung một mức giá tham khảo.</p>
+
+            <div class="table-wrap">
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>TÊN LOẠI CÂY</th>
+                            <th>CÁC GIỐNG CÙNG LOẠI (ĐỒNG GIÁ)</th>
+                            <th>GIÁ THAM KHẢO</th>
+                            <th>CĂN CỨ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. Cây Trầu Bà Mini</strong></td>
+                            <td>Trầu bà xanh, Trầu bà vân vàng, Trầu bà đế vương mini</td>
+                            <td class="price-col">50.000 VNĐ</td>
+                            <td rowspan="4" class="reason-col">
+                                Phù hợp với học sinh, sinh viên và dân văn phòng; mức giá cạnh tranh cho các loại cây cảnh mini lọc không khí.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. Cây Dây Nhện Mini</strong></td>
+                            <td>Dây nhện sọc trắng ở viền, Dây nhện sọc trắng giữa lá</td>
+                            <td class="price-col">45.000 VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. Cây Thiết Mộc Lan Mini</strong></td>
+                            <td>Thiết mộc lan sọc vàng giữa lá, Thiết mộc lan xanh</td>
+                            <td class="price-col">60.000 VNĐ</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4. Cây Cỏ Đồng Tiền TQ (Pilea)</strong></td>
+                            <td>Pilea chậu đất nung, Pilea chậu sứ trắng</td>
+                            <td class="price-col">60.000 VNĐ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phân bổ nhân lực -->
+    <section id="nhan-luc" class="section">
+        <div class="container">
+            <h2 class="section-heading">PHÂN BỔ NHÂN LỰC DỰ ÁN</h2>
+            <div class="team-container">
+                <div class="team-row">
+                    <div class="member-name">Quốc Chiêu</div>
+                    <div class="member-task task-yellow">Thu mua hạt giống, mầm cây và trồng tại vườn cây sau nhà</div>
+                </div>
+                <div class="team-row">
+                    <div class="member-name">Vi Anh, Đức Trung</div>
+                    <div class="member-task task-blue">Phụ trách bán cây tại quầy hàng (bán hàng)</div>
+                </div>
+                <div class="team-row">
+                    <div class="member-name">Anh Thư, Anh Tuấn</div>
+                    <div class="member-task task-darkgreen">Bán cây trên mạng xã hội, quảng bá sản phẩm, làm truyền thông, tiếp nhận hỏi đáp online</div>
+                </div>
+                <div class="team-row">
+                    <div class="member-name">Trình Vũ</div>
+                    <div class="member-task task-brown">Shipper đi giao cây tận nơi cho khách đặt hàng online</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CỬA SỔ POPUP (MODAL) HIỆN CHI TIẾT KHI CLICK VÀO CÂY -->
+    <div id="plant-modal" class="modal-overlay">
+        <div class="modal-box">
+            <button id="close-modal" class="close-button" title="Đóng">&times;</button>
+            <div id="modal-content-area"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Dự án <strong>GROW A GARDEN</strong> • Cẩm nang thông tin & phong thủy cây cảnh mini</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
